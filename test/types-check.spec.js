@@ -90,5 +90,17 @@ describe("javascript types check", function () {
   it("isPromise", function () {
     var a = new Promise(function () {});
     expect(typeCheck.isPromise(a)).toBe(true);
+  });  
+
+  it("isPrimitive", function () {
+    expect(typeCheck.isPrimitive("s")).toBe(true);
+    expect(typeCheck.isPrimitive(4)).toBe(true);
+    expect(typeCheck.isPrimitive(true)).toBe(true);
+    expect(typeCheck.isPrimitive(Symbol("fsdfsdfs"))).toBe(true);
+    expect(typeCheck.isPrimitive({})).toBe(false);
+    expect(typeCheck.isPrimitive([])).toBe(false);
+    expect(typeCheck.isPrimitive(function () {})).toBe(false);
+    expect(typeCheck.isPrimitive(null)).toBe(false);
+    expect(typeCheck.isPrimitive(undefined)).toBe(false);
   });
 });

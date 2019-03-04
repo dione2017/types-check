@@ -59,3 +59,7 @@ export function isArrayBuffer (type) {
 export function isPromise (type) {
   return toString.call(type) === "[object Promise]";
 }
+
+export function isPrimitive (type) {
+  return isString(type) || isNumber(type) || isBoolean(type) || isSymbol(type);
+}
