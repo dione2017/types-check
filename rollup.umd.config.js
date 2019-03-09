@@ -2,14 +2,14 @@ const uglify = require("rollup-plugin-uglify");
 
 const umdConfig = {
   output: {
-    format: 'umd',
-    name: 'TypesCheck',
+    format: "umd",
+    name: "TypesCheck",
     legacy: true
   },
   plugins: []
 };
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   umdConfig.plugins.push(
     uglify({
       compress: {
